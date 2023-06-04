@@ -1,7 +1,7 @@
 
 
 <template>
-  <div > 
+  <div id="title"> 
     <img src="../assets/img/pokedex.png">
     
   </div>
@@ -13,7 +13,7 @@ div {
   margin: auto;
     float: none;
     width: 720px;
-    height: 720px;
+    height: 300px;
 }
 img {
   width: 720px;
