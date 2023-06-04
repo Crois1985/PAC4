@@ -1,0 +1,45 @@
+body
+{
+    background-color: rgb(50,50,50);
+    transition: background-color 1s;
+}
+
+.card
+{
+    background-color: rgb(128,128,128);
+    border-color: black;
+}
+
+.card:hover
+{
+    transform: scale(1.2, 1.2);
+    
+}
+
+
+
+a
+{
+    color: white;
+}
+
+
+.navbar
+{
+  /*  background-color: rgb(128,128,128);*/
+}
+
+label
+{
+    color: white;
+}
+
+h2,h4{
+    color: white;
+}
+
+.butt
+{
+    background-color: rgb(128,128,128);
+}
+

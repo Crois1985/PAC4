@@ -1,0 +1,44 @@
+body
+{
+    background-color: white;
+    transition: background-color 1s;
+}
+
+
+.card
+{
+    background-color: #EFEFEF;
+    border-color: gray;
+}
+
+.card:hover
+{
+    transform: scale(1.2, 1.2);
+     background-color: #EFEFEF;
+}
+
+
+
+a
+{
+    color: black;
+   
+}
+
+
+
+label
+{
+    color: black;
+}
+
+h2,h4{
+    color: black;
+}
+
+.butt:hover
+{
+    background-color: #EFEFEF;
+
+}
+
