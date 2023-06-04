@@ -1,27 +1,17 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/header.vue'
-import modes from './components/modes.vue'
-//this.$session.start()
+import Modes from './components/modes.vue'
+import main from './views/main.vue'
+import Llistat from './components/llista.vue'
+import { temas } from './components/modes.vue'
 
 </script>
 
 <template>
-<modes></modes>
+  <Modes></Modes>
   <Header></Header>
-
-
-    <div class="wrapper">
-   
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  
-
- 
+  <Llistat ></Llistat>
 </template>
 
 
