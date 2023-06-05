@@ -1,13 +1,29 @@
 <script setup lang="ts">
+import Card from './card.vue'
+</script>
+
+<script  lang="ts">
 
 
-defineProps<{
+export default  {
+  
+data(){
+  return {
+  ids:[]}
+},
+  methods: {
+    get_index()
+    {
+      this.ids=sessionStorage.getItem("ids").split(',');
+      console.log(this.ids.toString())
+    }
+  },
+  created()
+  {
+    this.get_index()
+  }
 
-  ids: string 
-}>()
-
-
-
+}
 </script>
 
 <template>
@@ -22,6 +38,17 @@ defineProps<{
   <!--Aqui van las tarjetas-->
  <!--....-->
   <!--Final-->
+        <Card ide={{ids[1]}}></Card> 
+        <Card ide={{ids[1]}}></Card>
+        <Card ide={{ids[2]}}></Card>
+        <Card ide={{ids[3]}}></Card>
+        <Card ide={{ids[4]}}></Card>
+        <Card ide={{ids[5]}}></Card>
+        <Card ide={{ids[6]}}></Card>
+        <Card ide={{ids[7]}}></Card>
+        <Card ide={{ids[8]}}></Card>
+        <Card ide={{ids[9]}}></Card>
+        
 
 
     </div>
@@ -48,8 +75,9 @@ div{
 
 .butt 
 {
+display: block;
  width: 200px;
- /*height: 50px;*/
+ height: 25px;
  margin-left: 5px;
 
  background-color: #EFEFEF;
@@ -59,6 +87,11 @@ div{
  transition: background-color 1s;
 
 }
+a
+ {
+  display:block;
+  height: 25px;
+ }
 
 
 .butt label{

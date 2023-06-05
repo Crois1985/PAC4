@@ -1,12 +1,44 @@
 <script setup lang="ts">
+
 import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/header.vue'
 import Modes from './components/modes.vue'
-import main from './views/main.vue'
 import Llistat from './components/llista.vue'
 import { temas } from './components/modes.vue'
 
 </script>
+
+<script lang="ts">
+        export default {
+           
+            methods: {
+              get_rnd(n,max) //Agafem la llista de nombres aleatoris
+              {  
+              //n= quantitat de nombres aleatoris
+              //max= nombre aleatori mes alt
+              
+              let nums=[];  //array de numeros
+              let i=0
+              for(i=0; i<n;i++)
+              {
+                  nums.push(Math.floor(Math.random() * max));
+              }
+             
+              sessionStorage.setItem("ids", nums.toString())
+              console.log(sessionStorage.getItem("ids"))
+              return nums.toString()
+              
+              }
+        
+            },
+            created(){
+              this.ids=this.get_rnd(10,1000)
+              
+              
+            }
+          
+          }
+ </script>
 
 <template>
   <Modes></Modes>

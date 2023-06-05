@@ -1,17 +1,27 @@
-<script setup lang="ts">
+<script lang="ts">
+
+//import axios from "axios";
+
+
 export default {
-   
-   data() { 
-      return {
-        id:0 , /*la ID del Pokemon*/
-        nom:'',
-        front:''
-      }
-    }
-}
+  props:['ide']
+,
+data() {
+  return {
+  nom:''
+}}
+
+} //, created() {
+
+   // console.log("Identificador "+this.ide)
+
+    //axios.get("https://jsonplaceholder.typicode.com/todos/1").then((result) => {
+     // console.log(result.data);
+  //  }
+ // }
 
 
- 
+
 
 
 
@@ -19,8 +29,8 @@ export default {
 
 <template>
 
-  <div id="poke_profile" >
-    <a href="index.html?id={{ id }}">
+  <div  class="card" >
+    <a href='index.html?id={{ ide }}'>
         <img src="{{ front }}" >
         <h3>{{ nom }}</h3>
     </a>
@@ -32,11 +42,46 @@ export default {
 </template>
 
 <style scoped>
- #poke_profile
-{
-    margin: auto;
-    display: none;
-    width: 720px;
-    height: 512px;
+
+
+.card{
+
+float:left;
+
+width: 130px;
+height: 200px;
+
+/* border-style: double;*/
+text-align: center;
+border-radius: 20px;
+margin: 4px;
+transition: background-color 1s;
 }
+
+
+.card > img
+{
+    
+    text-align: center;
+    width: 120px;
+    height: 120px;
+}
+
+.card > h3
+{
+    text-align: center;
+    font-size: 18;
+}
+
+
+
+.card:hover
+{
+    transform: scale(1.1, 1.1);
+     background-color: #EFEFEF;
+}
+
+
+
+
 </style>

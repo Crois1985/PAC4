@@ -1,4 +1,8 @@
-<script setup lang="ts">
+<script>
+import {useStore} from "../stores/store.js";
+
+const store = useStore();
+
   import Header from '../components/header.vue'
   import Modes from '../components/modes.vue'
   import Llistat from '../components/llista.vue'
