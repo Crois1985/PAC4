@@ -1,24 +1,56 @@
+
+<script setup lang="ts">
+
+import axios from "axios";
+</script>
 <script lang="ts">
 
-//import axios from "axios";
+
 
 
 export default {
-  props:['ide']
-,
+  props:
+  {ide:String},
 data() {
   return {
-  nom:''
-}}
+  url:'',  
+  front:'',
+  back:'',
+  atac:'',
+  def:'',
+  nom:'',
+  dades: null  
+}
+},
+ methods: {
+  get_url()
+  {
 
-} //, created() {
+   console.log('index.html?id='+this.ide)
 
-   // console.log("Identificador "+this.ide)
+    this.url='index.html?id='+this.ide
+    axios
+      .get('https://pokeapi.co/api/v2/pokemon/'+this.ide)
+      .then(response => (
+       
+    
+      this.nom=response.data.name,
+      this.front=response.data.sprites.front_default,
+      this.back=response.data.sprites.back_default,
+      this.atac=response.data.stats[1].base_stat,
+      this.def=response.data.stats[2].base_stat
+      
+      ))
 
-    //axios.get("https://jsonplaceholder.typicode.com/todos/1").then((result) => {
-     // console.log(result.data);
-  //  }
- // }
+     
+ 
+    }
+  },
+  created()
+  {
+    this.get_url()
+  }
+}
 
 
 
@@ -30,8 +62,8 @@ data() {
 <template>
 
   <div  class="card" >
-    <a href='index.html?id={{ ide }}'>
-        <img src="{{ front }}" >
+    <a :href='url' >
+        <img :src='front' >
         <h3>{{ nom }}</h3>
     </a>
      

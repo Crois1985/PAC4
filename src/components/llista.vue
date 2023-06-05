@@ -38,16 +38,16 @@ data(){
   <!--Aqui van las tarjetas-->
  <!--....-->
   <!--Final-->
-        <Card ide={{ids[1]}}></Card> 
-        <Card ide={{ids[1]}}></Card>
-        <Card ide={{ids[2]}}></Card>
-        <Card ide={{ids[3]}}></Card>
-        <Card ide={{ids[4]}}></Card>
-        <Card ide={{ids[5]}}></Card>
-        <Card ide={{ids[6]}}></Card>
-        <Card ide={{ids[7]}}></Card>
-        <Card ide={{ids[8]}}></Card>
-        <Card ide={{ids[9]}}></Card>
+        <Card :ide=ids[0]></Card> 
+        <Card :ide=ids[1]></Card>
+        <Card :ide=ids[2]></Card>
+        <Card :ide=ids[3]></Card>
+        <Card :ide=ids[4]></Card>
+        <Card :ide=ids[5]></Card>
+        <Card :ide=ids[6]></Card>
+        <Card :ide=ids[7]></Card>
+        <Card :ide=ids[8]></Card>
+        <Card :ide=ids[9]></Card>
         
 
 
