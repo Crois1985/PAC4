@@ -16,7 +16,26 @@ data(){
     {
       this.ids=sessionStorage.getItem("ids").split(',');
       console.log(this.ids.toString())
-    }
+    },
+    get_rnd(n,max) //Agafem la llista de nombres aleatoris
+              {  
+              //n= quantitat de nombres aleatoris
+              //max= nombre aleatori mes alt
+              
+              let nums=[];  //array de numeros
+              let i=0
+              for(i=0; i<n;i++)
+              {
+                  nums.push(Math.floor(Math.random() * max));
+              }
+              
+              sessionStorage.setItem("ids", nums.toString())
+              this.ids=nums;
+              console.log("numeros ",this.ids.toString())
+              console.log(sessionStorage.getItem("ids"))
+              return nums.toString()
+              
+              }
   },
   created()
   {
@@ -32,7 +51,7 @@ data(){
         <div class="navbar">
             <label>Cerca a la llista:</label>
             <input type="search" id="find" oninput="cerca();">
-            <a href="index.html" onclick="sessionStorage.setItem('ids', get_rnd(10,1000));"><div class="butt"><label>Refresca la llista </label></div></a>
+            <a href="index.html" @click="get_rnd(10,1000)"><div class="butt"><label>Refresca la llista </label></div></a>
         </div>
 
   <!--Aqui van las tarjetas-->
@@ -65,7 +84,7 @@ div{
     width:720px;
     height: 512px;
     margin: auto;
-    background-color: red;
+    background-color: transparent;
     
 }
 #navbar{
@@ -90,6 +109,7 @@ display: block;
 a
  {
   display:block;
+  width:200px;
   height: 25px;
  }
 

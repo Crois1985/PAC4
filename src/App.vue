@@ -32,8 +32,14 @@ import { temas } from './components/modes.vue'
         
             },
             created(){
+              if (sessionStorage.getItem("ids")==null)
+              {
               this.ids=this.get_rnd(10,1000)
-              
+              }
+              else 
+              {
+                this.ids=sessionStorage.getItem("ids")
+              }
               
             }
           
