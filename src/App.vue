@@ -49,7 +49,11 @@ import { temas } from './components/modes.vue'
 <template>
   <Modes></Modes>
   <Header></Header>
+<!--Aqui comprovar si hi ha un ID o no..per veure quina es mostra-->
+
   <Llistat ></Llistat>
+
+
 </template>
 
 
