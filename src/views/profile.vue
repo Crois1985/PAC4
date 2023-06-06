@@ -36,12 +36,12 @@ data() {
       .then(response => (
        
     
-      this.nom=response.data.name,
+      this.nom="Nom: "+response.data.name,
       this.front=response.data.sprites.front_default,
       this.back=response.data.sprites.back_default,
       this.atac="Atac: "+response.data.stats[1].base_stat,
       this.def="Defensa: "+response.data.stats[2].base_stat,
-      this.tipus="Tipus: "+response.data.types[0]
+      this.tipus="Tipus: "+response.data.types[0].type.name
       
       ))
 
@@ -69,10 +69,11 @@ data() {
       <div id="poke_profile">
 
           <div class="navbar">
-              <a id="back-b" href="index.html"><div class="butt"><label>Torna enrera </label></div></a>
+              <a class="abut"  id="back-b" href="index.html"><div class="butt"><label>Torna enrera </label></div></a>
           </div>
 
           <h2 id="pk_name">{{ nom }}</h2>
+          <br>
           <h4 id="tipus">{{ tipus }}</h4>
           <div id="imgs"> 
               <img id="front" :src='front'>
@@ -86,6 +87,65 @@ data() {
 
 </template>
 
-<style>
+<style scoped>
+
+div{
+  float:left;
+}
+
+.butt 
+{
+display: block;
+ width: 200px;
+ height: 25px;
+ margin-left: 5px;
+
+ background-color: #EFEFEF;
+ border-color: gray;
+ border-radius: 20px;
+ 
+ transition: background-color 1s;
+
+}
+a
+ {
+  display:block;
+  width:120px;
+  height: 25px;
+ }
+
+ .abut
+ {
+  margin-left: 600px;
+  width: 120px;
+ }
+
+
+.butt label{
+    width: 100%;
+    opacity:1;
+  
+    margin-top: 15px;
+}
+.butt:hover
+{
+    transform: scale(1.2, 1.2);
+    
+}
+
+#pk_name
+{
+  font-size: 26px;
+  font-weight: bold;
+}
+img
+{
+  width: 200px;
+  height: 200px;
+}
+
+h4{
+  font-size: 20px;
+}
 
 </style>

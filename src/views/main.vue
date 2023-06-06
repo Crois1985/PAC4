@@ -9,7 +9,9 @@ export default  {
   
 data(){
   return {
-  ids:[]}
+  ids:[],
+   cerca:'' 
+}
 },
   methods: {
     get_index()
@@ -35,7 +37,14 @@ data(){
               console.log(sessionStorage.getItem("ids"))
               return nums.toString()
               
-              }
+              },
+
+     cerca()
+          {
+           //Ya veremos que se hace aqui
+           console.log("implementar")
+          }
+
   },
   created()
   {
@@ -50,8 +59,8 @@ data(){
    <div id="llistat" >
         <div class="navbar">
             <label>Cerca a la llista:</label>
-            <input type="search" id="find" oninput="cerca();">
-            <a href="index.html" @click="get_rnd(10,1000)"><div class="butt"><label>Refresca la llista </label></div></a>
+            <input type="search" :value="cerca" id="find" oninput="cerca();">
+            <a class="abut" href="index.html" @click="get_rnd(10,1000)"><div class="butt"><label>Refresca la llista </label></div></a>
         </div>
 
   <!--Aqui van las tarjetas-->
@@ -95,7 +104,7 @@ div{
 .butt 
 {
 display: block;
- width: 200px;
+ width: 120px;
  height: 25px;
  margin-left: 5px;
 
@@ -111,6 +120,11 @@ a
   display:block;
   width:200px;
   height: 25px;
+ }
+ .abut
+ {
+  margin-left: 600px;
+  width: 120px;
  }
 
 
