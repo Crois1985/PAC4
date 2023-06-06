@@ -6,7 +6,10 @@ import Card from '@/components/card.vue'
 
 
 export default  {
-  
+props:
+{
+  tema:String
+}  ,
 data(){
   return {
   ids:[],

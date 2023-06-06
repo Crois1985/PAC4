@@ -11,7 +11,8 @@ import axios from "axios";
 
 export default {
   props:
-  {ide:String},
+  {ide:String,
+  tema:String},
 data() {
   return {
   url:'',  
