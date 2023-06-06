@@ -14,9 +14,9 @@ export {temas}
     methods: {
     //Funcio que salta entre temes
    set_tema(e)
-
-
   {
+    //Aqui habria que setear una variable de entorno....
+    //Y luego Que los componentes la consulten y actuen en consecuencia
       if (e.target.value==0)
       {
         this.temas='../assets/clar.css'
