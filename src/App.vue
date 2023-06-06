@@ -1,37 +1,66 @@
 <script setup lang="ts">
 
-import { RouterLink, RouterView } from 'vue-router'
+//import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/header.vue'
 import Modes from './components/modes.vue'
-import Llistat from './components/llista.vue'
+import Llistat from './views/main.vue'
+import Fitxa from './views/profile.vue'
 import { temas } from './components/modes.vue'
 
 </script>
 
 <script lang="ts">
         export default {
+          data(){
+            return {
+                poke_id:'',
+                prof:'',
+                ids:''
+            }
+          },
            
             methods: {
               get_rnd(n,max) //Agafem la llista de nombres aleatoris
               {  
-              //n= quantitat de nombres aleatoris
-              //max= nombre aleatori mes alt
+                //n= quantitat de nombres aleatoris
+                //max= nombre aleatori mes alt
+                
+                let nums=[];  //array de numeros
+                let i=0
+                for(i=0; i<n;i++)
+                {
+                    nums.push(Math.floor(Math.random() * max));
+                }
               
-              let nums=[];  //array de numeros
-              let i=0
-              for(i=0; i<n;i++)
-              {
-                  nums.push(Math.floor(Math.random() * max));
-              }
-             
-              sessionStorage.setItem("ids", nums.toString())
-              console.log(sessionStorage.getItem("ids"))
-              return nums.toString()
-              
+                sessionStorage.setItem("ids", nums.toString())
+                console.log(sessionStorage.getItem("ids"))
+                return nums.toString()
+                
               }
         
             },
             created(){
+              //comprovem si hem escollit un pokemon
+              let uri = window.location.search.substring(1) 
+              let params = new URLSearchParams(uri)
+              let file_id=params.get("id")
+
+              if (file_id==null)
+              {
+                this.poke_id="-1"
+                this.prof='false'
+                console.log("Sin IDs")
+              }
+              else
+              {
+
+                this.poke_id=file_id
+                this.prof='true'
+                console.log("Tenemos pokemon "+this.poke_id)
+              }
+              
+
+              //comprovem si tenim una llsita carregada
               if (sessionStorage.getItem("ids")==null)
               {
               this.ids=this.get_rnd(10,1000)
@@ -47,13 +76,16 @@ import { temas } from './components/modes.vue'
  </script>
 
 <template>
+
+
   <Modes></Modes>
   <Header></Header>
 <!--Aqui comprovar si hi ha un ID o no..per veure quina es mostra-->
+<Llistat v-if="prof==='false'"></Llistat>
+ <Fitxa :ide="poke_id" v-else></Fitxa>
 
-  <Llistat ></Llistat>
-
-
+  
+  
 </template>
 
 

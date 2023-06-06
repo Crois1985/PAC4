@@ -41,7 +41,7 @@ data() {
       this.back=response.data.sprites.back_default,
       this.atac="Atac: "+response.data.stats[1].base_stat,
       this.def="Defensa: "+response.data.stats[2].base_stat,
-      this.tipus="Tipus: "+response.data.types
+      this.tipus="Tipus: "+response.data.types[0]
       
       ))
 
@@ -63,28 +63,27 @@ data() {
 </script>
 
 <template>
-<div id="marc">
-    <img id="title" src="img/pokedex.png">
+  
+     
 
-    <div id="poke_profile">
+      <div id="poke_profile">
 
-        <div class="navbar">
-            <a id="back-b" :href="index.html"><div class="butt"><label>Torna enrera </label></div></a>
-        </div>
+          <div class="navbar">
+              <a id="back-b" href="index.html"><div class="butt"><label>Torna enrera </label></div></a>
+          </div>
 
-        <h2 id="pk_name">{{ nom }}</h2>
-        <h4 id="tipus">{{ tipus }}</h4>
-        <div id="imgs"> 
-            <img id="front" :src='front'>
-            <img id="back" :src='back'>
-        </div>
-    
-        <h4 id="atac">{{ atac }}</h4>
-        <h4 id="defensa">{{ def }}</h4>
-        
+          <h2 id="pk_name">{{ nom }}</h2>
+          <h4 id="tipus">{{ tipus }}</h4>
+          <div id="imgs"> 
+              <img id="front" :src='front'>
+              <img id="back" :src='back'>
+          </div>
+      
+          <h4 id="atac">{{ atac }}</h4>
+          <h4 id="defensa">{{ def }}</h4>
+      </div>    
 
 
-    </div>
 </template>
 
 <style>
