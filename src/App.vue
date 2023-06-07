@@ -15,11 +15,19 @@ import { temas } from './components/modes.vue'
             return {
                 poke_id:'',
                 prof:'',
-                ids:''
+                ids:'',
+                tema:''
             }
           },
            
             methods: {
+              get_tema()
+              {
+                import(sessionStorage.getItem("tema").toString())
+                
+
+              },
+            
               get_rnd(n,max) //Agafem la llista de nombres aleatoris
               {  
                 //n= quantitat de nombres aleatoris
@@ -40,6 +48,11 @@ import { temas } from './components/modes.vue'
         
             },
             created(){
+
+
+              this.tema=sessionStorage.getItem("tema")
+              import(this.tema)
+
               //comprovem si hem escollit un pokemon
               let uri = window.location.search.substring(1) 
               let params = new URLSearchParams(uri)
@@ -75,14 +88,17 @@ import { temas } from './components/modes.vue'
           }
  </script>
 
+
+
 <template>
 
 
   <Modes></Modes>
+  <p>{{ this.tema }}</p>
   <Header></Header>
-<!--Aqui comprovar si hi ha un ID o no..per veure quina es mostra-->
-<Llistat v-if="prof==='false'"></Llistat>
- <Fitxa :ide="poke_id" v-else></Fitxa>
+  <!--Aqui comprovar si hi ha un ID o no..per veure quina es mostra-->
+  <Llistat v-if="prof==='false'"></Llistat>
+  <Fitxa :ide="poke_id" v-else></Fitxa>
 
   
   

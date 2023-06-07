@@ -17,6 +17,7 @@ data(){
 }
 },
   methods: {
+
     get_index()
     {
       this.ids=sessionStorage.getItem("ids").split(',');
@@ -49,6 +50,8 @@ data(){
           }
 
   },
+
+
   created()
   {
     this.get_index()
@@ -140,6 +143,8 @@ a
 .butt:hover
 {
     transform: scale(1.2, 1.2);
+     background-color: gray; 
+
     
 }
 

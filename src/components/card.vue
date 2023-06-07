@@ -81,13 +81,15 @@ data() {
 float:left;
 
 width: 130px;
-height: 200px;
+height: 175px;
 
 /* border-style: double;*/
 text-align: center;
 border-radius: 20px;
 margin: 4px;
-transition: background-color 1s;
+background-color:white;
+transition: background-color 0.3s;
+
 }
 
 
@@ -110,7 +112,7 @@ transition: background-color 1s;
 .card:hover
 {
     transform: scale(1.1, 1.1);
-     background-color: #EFEFEF;
+     background-color:rgb(220,220,220); 
 }
 
 

@@ -97,7 +97,7 @@ div{
 .butt 
 {
 display: block;
- width: 200px;
+ width: 125px;
  height: 25px;
  margin-left: 5px;
 

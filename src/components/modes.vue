@@ -1,14 +1,14 @@
 <script lang="ts">
 import { moduleExpression } from '@babel/types';
 
-const temas ='../assets/clar.css'
+let temas ='../assets/clar.css'
 export {temas}
 
   export default {
    
    data() { 
       return {
-        temas  /*: '../assets/clar.css'*/
+        temas  : '../assets/clar.css'
       }
     }, 
     methods: {
@@ -29,7 +29,7 @@ export {temas}
         this.temas='../assets/obscur.css'
         sessionStorage.setItem("tema", '../assets/obscur.css')  //Salvem la llista per refrescar
       }
-      console.log("Tema " +this.temas)
+      console.log("Tema " +sessionStorage.getItem("tema"))
   }
     }
   }
