@@ -16,17 +16,12 @@ import { temas } from './components/modes.vue'
                 poke_id:'',
                 prof:'',
                 ids:'',
-                tema:''
+                tema:0
             }
           },
            
             methods: {
-              get_tema()
-              {
-                import(sessionStorage.getItem("tema").toString())
-                
-
-              },
+           
             
               get_rnd(n,max) //Agafem la llista de nombres aleatoris
               {  
@@ -50,8 +45,7 @@ import { temas } from './components/modes.vue'
             created(){
 
 
-              this.tema=sessionStorage.getItem("tema")
-              import(this.tema)
+            
 
               //comprovem si hem escollit un pokemon
               let uri = window.location.search.substring(1) 
@@ -96,7 +90,7 @@ import { temas } from './components/modes.vue'
   <div id="temes">
    
     
-        <input type="radio" :value=0 v-model="tema" name="tema"  >
+        <input type="radio" :value=0 v-model="tema" name="tema"  checked >
         <label>Tema clar</label><br>
         <input type="radio" :value=1  v-model="tema" name="tema" >
         <label>Tema obscur</label><br>
@@ -105,10 +99,7 @@ import { temas } from './components/modes.vue'
 </div>
 
 
-
-
-  <p>{{ this.tema }}</p>
-  <Header></Header>
+  <Header :tema="tema"></Header>
   <!--Aqui comprovar si hi ha un ID o no..per veure quina es mostra-->
   <Llistat :tema="tema" v-if="prof==='false'"  ></Llistat>
   <Fitxa :ide="poke_id"  :tema="tema" v-else  ></Fitxa>
@@ -196,5 +187,8 @@ float: right;
 
  .obscur{
   background-color: rgb(100, 100, 100);
+}
+.obscur > div > label{
+  color:white;
 }
 </style>
