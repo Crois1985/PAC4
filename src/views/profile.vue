@@ -155,4 +155,12 @@ h4{
   background-color: rgb(100,100,100);
 }
 
+.obscur > h2{
+  color:white;
+}
+
+.obscur > h4{
+  color:white;
+}
+
 </style>
