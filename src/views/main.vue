@@ -8,7 +8,8 @@ import Card from '@/components/card.vue'
 export default  {
 props:
 {
-  tema:String
+  tema:Boolean,
+
 }  ,
 data(){
   return {
@@ -62,7 +63,7 @@ data(){
 
 <template>
   <!--:style="`--visibility: ${mostra}`"-->
-   <div id="llistat" >
+   <div id="llistat" :class="{obscur:tema}">
         <div class="navbar">
             <label>Cerca a la llista:</label>
             <input type="search" v-model="cerca" placeholder="Cerca pokemon">
@@ -98,7 +99,7 @@ div{
     width:720px;
     height: 512px;
     margin: auto;
-    background-color: transparent;
+   
     
 }
 #navbar{
@@ -112,12 +113,13 @@ display: block;
  width: 120px;
  height: 25px;
  margin-left: 5px;
+ margin-right: 100px;
 
- background-color: #EFEFEF;
+ background-color: rgb(230,230,230);
  border-color: gray;
  border-radius: 20px;
  
- transition: background-color 1s;
+ 
 
 }
 a
@@ -141,10 +143,16 @@ a
 }
 .butt:hover
 {
-    transform: scale(1.2, 1.2);
-     background-color: gray; 
+  transform: scale(1.1, 1.1);
+      
+     box-shadow: 5px 10px;
 
     
 }
+
+.obscur{
+  background-color: black;
+}
+
 
 </style>

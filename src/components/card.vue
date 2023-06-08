@@ -11,7 +11,8 @@ import axios from "axios";
 export default {
   props:
   {ide:String,
-  filtre:String},
+  filtre:String
+  },
 data() {
   return {
   url:'',  

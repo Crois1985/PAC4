@@ -92,13 +92,26 @@ import { temas } from './components/modes.vue'
 
 <template>
 
+<div id="cap" :class="{obscur:tema}">
+  <div id="temes">
+   
+    
+        <input type="radio" :value=0 v-model="tema" name="tema"  >
+        <label>Tema clar</label><br>
+        <input type="radio" :value=1  v-model="tema" name="tema" >
+        <label>Tema obscur</label><br>
+  
+</div>
+</div>
 
-  <Modes></Modes>
+
+
+
   <p>{{ this.tema }}</p>
   <Header></Header>
   <!--Aqui comprovar si hi ha un ID o no..per veure quina es mostra-->
-  <Llistat v-if="prof==='false'"></Llistat>
-  <Fitxa :ide="poke_id" v-else></Fitxa>
+  <Llistat :tema="tema" v-if="prof==='false'"  ></Llistat>
+  <Fitxa :ide="poke_id"  :tema="tema" v-else  ></Fitxa>
 
   
   
@@ -167,4 +180,21 @@ nav a:first-of-type {
 #app
  {display:block;}
 
+
+
+
+ #cap {
+ 
+ margin: auto;
+ float: none;
+ width: 720px;
+ height: 100px;
+}
+#temes{
+float: right;
+}
+
+ .obscur{
+  background-color: rgb(100, 100, 100);
+}
 </style>

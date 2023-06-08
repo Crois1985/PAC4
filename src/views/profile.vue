@@ -12,7 +12,8 @@ import axios from "axios";
 export default {
   props:
   {ide:String,
-  tema:String},
+  tema:String,
+  mode:Boolean},
 data() {
   return {
   url:'',  
@@ -67,7 +68,7 @@ data() {
   
      
 
-      <div id="poke_profile">
+      <div id="poke_profile" :class="{obscur:tema}">
 
           <div class="navbar">
               <a class="abut"  id="back-b" href="index.html"><div class="butt"><label>Torna enrera </label></div></a>
@@ -147,6 +148,11 @@ img
 
 h4{
   font-size: 20px;
+}
+
+
+.obscur{
+  background-color: rgb(100,100,100);
 }
 
 </style>
