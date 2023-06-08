@@ -105,8 +105,11 @@ height: 175px;
 text-align: center;
 border-radius: 20px;
 margin: 4px;
-background-color:white;
+background-color: rgb(220,220,220);
 transition: background-color 0.3s;
+margin-top: 15px;
+margin-bottom: 15px;
+margin-left:10px
 
 }
 
@@ -131,6 +134,7 @@ transition: background-color 0.3s;
 {
     transform: scale(1.1, 1.1);
      background-color:rgb(220,220,220); 
+     box-shadow: 5px 10px;
 }
 
 
