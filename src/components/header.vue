@@ -2,7 +2,7 @@
 export default {
   props:
   {
-  tema:Boolean,
+  tema:'',
 }}
 </script>
 
@@ -29,7 +29,7 @@ img {
 }
 .obscur {
 
-background-color: black;
+background-color: rgb(50,50,50);
 font:white;
 
 

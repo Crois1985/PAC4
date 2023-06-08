@@ -8,7 +8,7 @@ import Card from '@/components/card.vue'
 export default  {
 props:
 {
-  tema:Boolean,
+  tema:'',
 
 }  ,
 data(){
@@ -25,30 +25,26 @@ data(){
       console.log(this.ids.toString())
     },
     get_rnd(n,max) //Agafem la llista de nombres aleatoris
-              {  
-              //n= quantitat de nombres aleatoris
-              //max= nombre aleatori mes alt
-              
-              let nums=[];  //array de numeros
-              let i=0
-              for(i=0; i<n;i++)
-              {
-                  nums.push(Math.floor(Math.random() * max));
-              }
-              
-              sessionStorage.setItem("ids", nums.toString())
-              this.ids=nums;
-              console.log("numeros ",this.ids.toString())
-              console.log(sessionStorage.getItem("ids"))
-              return nums.toString()
-              
-              },
+    {  
+    //n= quantitat de nombres aleatoris
+    //max= nombre aleatori mes alt
+    
+      let nums=[];  //array de numeros
+      let i=0
+      for(i=0; i<n;i++)
+      {
+          nums.push(Math.floor(Math.random() * max));
+      }
+    
+      sessionStorage.setItem("ids", nums.toString())
+      this.ids=nums;
+      console.log("numeros ",this.ids.toString())
+      console.log(sessionStorage.getItem("ids"))
+      return nums.toString()
+    
+    }
 
-     cercar()
-          {
-           //Ya veremos que se hace aqui
-          
-          }
+   
 
   },
 
@@ -72,16 +68,16 @@ data(){
 
   <!--Aqui van las tarjetas-->
 
-        <Card :ide=ids[0] :filtre=cerca></Card> 
-        <Card :ide=ids[1] :filtre=cerca></Card>
-        <Card :ide=ids[2] :filtre=cerca></Card>
-        <Card :ide=ids[3] :filtre=cerca></Card>
-        <Card :ide=ids[4] :filtre=cerca></Card>
-        <Card :ide=ids[5] :filtre=cerca></Card>
-        <Card :ide=ids[6] :filtre=cerca></Card>
-        <Card :ide=ids[7] :filtre=cerca></Card>
-        <Card :ide=ids[8] :filtre=cerca></Card>
-        <Card :ide=ids[9] :filtre=cerca></Card>
+        <Card :ide=ids[0] :filtre=cerca :class="{obscur:tema}"></Card> 
+        <Card :ide=ids[1] :filtre=cerca :class="{obscur:tema}"></Card>
+        <Card :ide=ids[2] :filtre=cerca :class="{obscur:tema}"></Card>
+        <Card :ide=ids[3] :filtre=cerca :class="{obscur:tema}"></Card>
+        <Card :ide=ids[4] :filtre=cerca :class="{obscur:tema}"></Card>
+        <Card :ide=ids[5] :filtre=cerca :class="{obscur:tema}"></Card>
+        <Card :ide=ids[6] :filtre=cerca :class="{obscur:tema}"></Card>
+        <Card :ide=ids[7] :filtre=cerca :class="{obscur:tema}"></Card>
+        <Card :ide=ids[8] :filtre=cerca :class="{obscur:tema}"></Card>
+        <Card :ide=ids[9] :filtre=cerca :class="{obscur:tema}"></Card>
         
 
 
@@ -102,9 +98,16 @@ div{
    
     
 }
-#navbar{
+.navbar{
   width:720px;
   height: 100px;
+  float:left;
+  margin-top: 20px;
+}
+
+.navbar > label
+{
+  margin-left: 15px;
 }
 
 .butt 
@@ -130,8 +133,9 @@ a
  }
  .abut
  {
-  margin-left: 600px;
+ 
   width: 120px;
+  float: right;
  }
 
 
@@ -151,8 +155,10 @@ a
 }
 
 .obscur{
-  background-color: black;
+  background-color: rgb(50,50,50);
 }
-
+.obscur > div >label
+{color: white;
+}
 
 </style>

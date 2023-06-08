@@ -10,16 +10,15 @@ import App from './App.vue'
 const app = createApp(App)
 
 app.use(createPinia())
-if (localStorage.getItem("tema") === null) {
-    sessionStorage.setItem("tema","'../assets/clar.css'")
-}
-else if (localStorage.getItem("tema") =="'../assets/clar.css'" )
+
+if (sessionStorage.getItem("tema")==null)
 {
-    require('@/assets/clar.css')
+  sessionStorage.setItem("tema", '0')
 }
-else if (localStorage.getItem("tema") =="'../assets/obscur.css'" )
-{
-    require('@/assets/obscur.css')
+else{
+    console.log("Tema "+sessionStorage.getItem("tema")) 
 }
+
+console.log()
 
 app.mount('#app')

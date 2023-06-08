@@ -2,10 +2,9 @@
 
 //import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/header.vue'
-import Modes from './components/modes.vue'
 import Llistat from './views/main.vue'
 import Fitxa from './views/profile.vue'
-import { temas } from './components/modes.vue'
+
 
 </script>
 
@@ -39,12 +38,31 @@ import { temas } from './components/modes.vue'
                 console.log(sessionStorage.getItem("ids"))
                 return nums.toString()
                 
-              }
+              },
+
+              set_tema(e)
+              {
+                //Aqui habria que setear una variable de entorno....
+                //Y luego Que los componentes la consulten y actuen en consecuencia
+                
+                sessionStorage.setItem("tema", e.target.value)  //Salvem la llista per refrescar
+
+                console.log("Tema " +sessionStorage.getItem("tema"))
+              },
+    
         
             },
             created(){
 
 
+              if (sessionStorage.getItem("tema")=="0")
+              {
+                this.tema=0
+              }
+              else{
+                this.tema=1
+              }
+              
             
 
               //comprovem si hem escollit un pokemon
@@ -80,19 +98,19 @@ import { temas } from './components/modes.vue'
             }
           
           }
- </script>
+</script>
 
 
 
-<template>
+<template :class="{obscur:tema}">
 
 <div id="cap" :class="{obscur:tema}">
   <div id="temes">
    
     
-        <input type="radio" :value=0 v-model="tema" name="tema"  checked >
+        <input type="radio" :value=0 v-model="tema" name="tema" @click='set_tema' checked >
         <label>Tema clar</label><br>
-        <input type="radio" :value=1  v-model="tema" name="tema" >
+        <input type="radio" :value=1  v-model="tema" name="tema" @click='set_tema'>
         <label>Tema obscur</label><br>
   
 </div>
@@ -108,7 +126,11 @@ import { temas } from './components/modes.vue'
   
 </template>
 
-
+<style>
+body{
+  transition: background-color 1s;
+}
+</style>
 
 <style scoped>
 header {
@@ -169,7 +191,9 @@ nav a:first-of-type {
 
 }
 #app
- {display:block;}
+ {display:block;
+ 
+}
 
 
 
@@ -186,7 +210,7 @@ float: right;
 }
 
  .obscur{
-  background-color: rgb(100, 100, 100);
+  background-color: rgb(50,50,50);
 }
 .obscur > div > label{
   color:white;

@@ -11,7 +11,8 @@ import axios from "axios";
 export default {
   props:
   {ide:String,
-  filtre:String
+  filtre:String,
+  tema:'',
   },
 data() {
   return {
@@ -138,6 +139,20 @@ margin-left:10px
      box-shadow: 5px 10px;
 }
 
+.obscur
+{
+  background-color:rgb(255,255,255);
+}
 
+.obscur > a > h3{
+  color:white;
+}
+
+.obscur:hover
+{
+  transform: scale(1.1, 1.1);
+     background-color:rgb(20,20,20); 
+     box-shadow: 5px 10px;
+}
 
 </style>
