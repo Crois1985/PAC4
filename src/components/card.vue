@@ -3,14 +3,15 @@
 
 import axios from "axios";
 </script>
+
+
+
 <script lang="ts">
-
-
-
 
 export default {
   props:
-  {ide:String},
+  {ide:String,
+  filtre:String},
 data() {
   return {
   url:'',  
@@ -19,7 +20,9 @@ data() {
   atac:'',
   def:'',
   nom:'',
-  dades: null  
+  dades: null,
+  vis:'visibility:visible;' 
+   
 }
 },
  methods: {
@@ -40,15 +43,30 @@ data() {
       this.atac=response.data.stats[1].base_stat,
       this.def=response.data.stats[2].base_stat
       
-      ))
+      ))}
 
-     
- 
-    }
   },
   created()
   {
     this.get_url()
+  },
+  watch:
+  {
+   filtre(){
+    
+      if (this.nom.includes(this.filtre) || this.filtre=='')
+      {
+        this.vis="visibility:visible;"
+        console.log("Visible "+this.nom)
+      }
+      else
+      {
+        this.vis="visibility:hidden;"
+        console.log("No Visible "+this.nom)
+      }
+    
+
+   }
   }
 }
 
@@ -61,7 +79,7 @@ data() {
 
 <template>
 
-  <div  class="card" >
+  <div  class="card" v-bind:style="vis" >
     <a :href='url' >
         <img :src='front' >
         <h3>{{ nom }}</h3>

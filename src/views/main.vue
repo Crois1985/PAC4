@@ -43,10 +43,10 @@ data(){
               
               },
 
-     cerca()
+     cercar()
           {
            //Ya veremos que se hace aqui
-           console.log("implementar")
+          
           }
 
   },
@@ -65,23 +65,22 @@ data(){
    <div id="llistat" >
         <div class="navbar">
             <label>Cerca a la llista:</label>
-            <input type="search" :value="cerca" id="find" oninput="cerca();">
+            <input type="search" v-model="cerca" placeholder="Cerca pokemon">
             <a class="abut" href="index.html" @click="get_rnd(10,1000)"><div class="butt"><label>Refresca la llista </label></div></a>
         </div>
 
   <!--Aqui van las tarjetas-->
- <!--....-->
-  <!--Final-->
-        <Card :ide=ids[0]></Card> 
-        <Card :ide=ids[1]></Card>
-        <Card :ide=ids[2]></Card>
-        <Card :ide=ids[3]></Card>
-        <Card :ide=ids[4]></Card>
-        <Card :ide=ids[5]></Card>
-        <Card :ide=ids[6]></Card>
-        <Card :ide=ids[7]></Card>
-        <Card :ide=ids[8]></Card>
-        <Card :ide=ids[9]></Card>
+
+        <Card :ide=ids[0] :filtre=cerca></Card> 
+        <Card :ide=ids[1] :filtre=cerca></Card>
+        <Card :ide=ids[2] :filtre=cerca></Card>
+        <Card :ide=ids[3] :filtre=cerca></Card>
+        <Card :ide=ids[4] :filtre=cerca></Card>
+        <Card :ide=ids[5] :filtre=cerca></Card>
+        <Card :ide=ids[6] :filtre=cerca></Card>
+        <Card :ide=ids[7] :filtre=cerca></Card>
+        <Card :ide=ids[8] :filtre=cerca></Card>
+        <Card :ide=ids[9] :filtre=cerca></Card>
         
 
 
