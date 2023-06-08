@@ -1,7 +1,13 @@
-
+<script  lang="ts">
+export default {
+  props:
+  {
+  tema:Boolean,
+}}
+</script>
 
 <template>
-  <div id="title"> 
+  <div id="title" :class="{obscur:tema}"> 
     <img src="../assets/img/pokedex.png">
     
   </div>
@@ -21,5 +27,18 @@ img {
     mix-blend-mode: multiply;
 
 }
+.obscur {
+
+background-color: black;
+font:white;
+
+
+}
+.obscur > img{
+
+  transparent:0.8;
+
+}
+
  
 </style>
