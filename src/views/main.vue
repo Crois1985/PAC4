@@ -88,6 +88,7 @@ data(){
 
 div{
   display:block;
+  
 }
 #llistat
 {
@@ -133,7 +134,7 @@ a
  }
  .abut
  {
- 
+  margin-right: 20px;
   width: 120px;
   float: right;
  }
@@ -142,7 +143,7 @@ a
 .butt label{
     width: 100%;
     opacity:1;
-  
+    margin-left: 5px;
     margin-top: 15px;
 }
 .butt:hover

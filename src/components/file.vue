@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   
-  <div id="poke_profile" :style="`--visibility: ${mostra}`">
+  <div id="poke_profile" :style="`--visibility: ${mostra}`; width:720px">
 
         <div class="navbar">
             <a id="back-b" href="index.html"><div class="butt"><label>Torna enrera </label></div></a>
@@ -34,15 +34,21 @@ defineProps<{
 </template>
 
 <style scoped>
+
  #poke_profile
 {
     margin: auto;
-    
     width: 720px;
     height: 512px;
 }
 .navbar
 {
   text-align: right;
+}
+
+.butt 
+{
+  margin-right: 20px;
+  width: 110px;
 }
 </style>
