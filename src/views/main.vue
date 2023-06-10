@@ -68,16 +68,8 @@ data(){
 
   <!--Aqui van las tarjetas-->
 
-        <Card :ide=ids[0] :filtre=cerca :class="{obscur:tema}"></Card> 
-        <Card :ide=ids[1] :filtre=cerca :class="{obscur:tema}"></Card>
-        <Card :ide=ids[2] :filtre=cerca :class="{obscur:tema}"></Card>
-        <Card :ide=ids[3] :filtre=cerca :class="{obscur:tema}"></Card>
-        <Card :ide=ids[4] :filtre=cerca :class="{obscur:tema}"></Card>
-        <Card :ide=ids[5] :filtre=cerca :class="{obscur:tema}"></Card>
-        <Card :ide=ids[6] :filtre=cerca :class="{obscur:tema}"></Card>
-        <Card :ide=ids[7] :filtre=cerca :class="{obscur:tema}"></Card>
-        <Card :ide=ids[8] :filtre=cerca :class="{obscur:tema}"></Card>
-        <Card :ide=ids[9] :filtre=cerca :class="{obscur:tema}"></Card>
+        <Card v-for="pok in ids" :ide=pok :filtre=cerca :class="{obscur:tema}"></Card> 
+      
         
 
 
