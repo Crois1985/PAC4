@@ -129,6 +129,8 @@ import Fitxa from './views/profile.vue'
 <style>
 body{
   transition: background-color 1s;
+  background-color: white;
+  color: black;
 }
 </style>
 
